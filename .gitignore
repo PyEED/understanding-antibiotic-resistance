@@ -12,6 +12,14 @@ __pycache__/
 *.log
 *.out
 *.pdf
+*.toc
+*.bbl
+*.blg
+*.bst
+*.aux
+*.log
+*.out
+*.lof
 
 
 # Distribution / packaging
