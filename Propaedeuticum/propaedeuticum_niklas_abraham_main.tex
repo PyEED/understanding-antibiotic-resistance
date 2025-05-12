@@ -1,0 +1,130 @@
+\documentclass[12pt,a4paper]{scrreprt}
+
+% -------------------------------------------------
+%                 PACKAGES
+% -------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman, english]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+% -------------------------------------------------
+%              META INFORMATION
+% -------------------------------------------------
+\newcommand{\institute}{Institute of Biochemistry and Technical Biochemistry}
+\newcommand{\department}{Department of Technical Biochemistry}
+\newcommand{\degreecourse}{Simulation Technology}
+\newcommand{\worktype}{Propaedeuticum}
+\newcommand{\university}{University of Stuttgart}
+
+\title{<Insert thesis title here>}
+\author{Niklas Abraham}
+\newcommand{\matriculation}{<Insert matriculation number>}
+\newcommand{\supervisor}{Prof.\,Dr.\,<Insert name>}
+\newcommand{\submissiondate}{\today}
+
+% -------------------------------------------------
+%              TITLE PAGE
+% -------------------------------------------------
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Large\bfseries\institute\par}
+    {\large\department\par}
+    \vspace{1cm}
+    {\large\degreecourse\par}
+    \vspace{2cm}
+    {\huge\bfseries\worktype\par}
+    \vspace{1cm}
+    {\small Submitted to the \university\par}
+    \vfill
+    {\LARGE\bfseries\@title\par}
+    \vspace{2cm}
+    \begin{tabular}{ll}
+      Supervisor: & \supervisor\\[0.5em]
+      Author: & \@author\\[0.5em]
+      Matriculation No.: & \matriculation\\[0.5em]
+      Submission date: & \submissiondate
+    \end{tabular}
+    \vspace*{2cm}
+  \end{titlepage}
+}
+\makeatother
+
+% -------------------------------------------------
+%        DECLARATION OF AUTHORSHIP COMMAND
+% -------------------------------------------------
+\newcommand{\Declaration}{
+  \chapter*{Declaration of authorship}
+  \thispagestyle{empty}
+  \noindent
+  I hereby certify that I have written the present thesis entitled \\
+  [0.5em]
+  \textit{\@title} \\
+  [0.5em]
+  independently and that the work contained herein is my own. All formulations
+  and concepts taken verbatim or in substance from printed or unprinted material
+  have been cited according to the rules of good scientific practice. The same
+  applies to all illustrations. The present thesis has not been submitted to
+  another university for the award of an academic degree in this form.\\[2cm]
+  \begin{flushright}
+    Stuttgart, \submissiondate\hspace{4cm}\rule{5cm}{0.4pt}\\
+    \@author
+  \end{flushright}
+  \newpage
+}
+
+% -------------------------------------------------
+%              DOCUMENT SETTINGS
+% -------------------------------------------------
+\geometry{left=3cm,right=2.5cm,top=3cm,bottom=3cm}
+\setstretch{1.2}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% -------------------------------------------------
+%              BEGIN DOCUMENT
+% -------------------------------------------------
+\begin{document}
+
+\selectlanguage{english} % switch language here
+
+\maketitle
+\Declaration
+
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+% -------------------------------------------------
+%                 CHAPTERS
+% -------------------------------------------------
+\input{introduction}
+% TODO: Write your introduction here.
+% You can use \citep or \citet for citations if you load natbib.
+
+% \chapter{Methods}
+% \chapter{Results}
+% \chapter{Discussion}
+
+% -------------------------------------------------
+%              BIBLIOGRAPHY
+% -------------------------------------------------
+\bibliographystyle{unsrtnat}
+\bibliography{references} % expects a file references.bib
+
+\end{document}
