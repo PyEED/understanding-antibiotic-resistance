@@ -20,6 +20,13 @@ __pycache__/
 *.log
 *.out
 *.lof
+*.lot
+*.bcf
+*.run.xml
+*.synctex.gz
+*.synctex
+*.synctex.gz
+*.synctex
 
 
 # Distribution / packaging

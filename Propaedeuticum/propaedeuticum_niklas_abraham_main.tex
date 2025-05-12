@@ -62,29 +62,6 @@
 \makeatother
 
 % -------------------------------------------------
-%        DECLARATION OF AUTHORSHIP COMMAND
-% -------------------------------------------------
-\newcommand{\Declaration}{
-  \chapter*{Declaration of authorship}
-  \thispagestyle{empty}
-  \noindent
-  I hereby certify that I have written the present thesis entitled \\
-  [0.5em]
-  \textit{\@title} \\
-  [0.5em]
-  independently and that the work contained herein is my own. All formulations
-  and concepts taken verbatim or in substance from printed or unprinted material
-  have been cited according to the rules of good scientific practice. The same
-  applies to all illustrations. The present thesis has not been submitted to
-  another university for the award of an academic degree in this form.\\[2cm]
-  \begin{flushright}
-    Stuttgart, \submissiondate\hspace{4cm}\rule{5cm}{0.4pt}\\
-    \@author
-  \end{flushright}
-  \newpage
-}
-
-% -------------------------------------------------
 %              DOCUMENT SETTINGS
 % -------------------------------------------------
 \geometry{left=3cm,right=2.5cm,top=3cm,bottom=3cm}
@@ -101,6 +78,8 @@
 
 \maketitle
 
+\cleardoublepage
+
 \pagenumbering{roman}
 \tableofcontents
 \listoffigures
@@ -112,7 +91,11 @@
 % -------------------------------------------------
 %                 CHAPTERS
 % -------------------------------------------------
-\input{introduction}
+\input{001_introduction}
+\input{002_theoretical_background}
+\input{003_methods}
+\input{003_outlook_for_bachelor_thesis}
+
 % TODO: Write your introduction here.
 % You can use \citep or \citet for citations if you load natbib.
 
@@ -125,6 +108,6 @@
 % -------------------------------------------------
 \bibliographystyle{unsrtnat}
 \bibliography{references} % expects a file references.bib
-\Declaration
+
 
 \end{document}
