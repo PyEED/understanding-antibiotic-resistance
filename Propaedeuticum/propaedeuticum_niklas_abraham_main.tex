@@ -4,14 +4,16 @@
 %                 PACKAGES
 % -------------------------------------------------
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage[ngerman, english]{babel}
 \usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{amsmath, amssymb}
 \usepackage{siunitx}
-\usepackage{hyperref}
+\usepackage[numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}            % needed for logos
+\graphicspath{{./}}              % adjust if logos live elsewhere
 \usepackage{setspace}
 \usepackage{enumitem}
 \usepackage{xcolor}
@@ -32,13 +34,28 @@
 \newcommand{\submissiondate}{\today}
 
 % -------------------------------------------------
-%              TITLE PAGE
+%              TITLE PAGE WITH LOGOS
 % -------------------------------------------------
 \makeatletter
-\renewcommand{\maketitle}{
+\renewcommand{\maketitle}{%
   \begin{titlepage}
     \centering
-    \vspace*{2cm}
+
+    % -------------------------------------------------
+    %                     LOGOS
+    % -------------------------------------------------
+    \begin{minipage}[t]{0.45\textwidth}
+      \raggedright
+      \raisebox{-2mm}{\includegraphics[width=0.95\linewidth]{resources/images/unistuttgart_logo.png}}% University logo
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+      \raggedleft
+      \includegraphics[width=0.8\linewidth]{resources/images/simtech_logo.png}% Study‑programme logo
+    \end{minipage}
+
+    \vspace{1.5cm}
+
     {\Large\bfseries\institute\par}
     {\large\department\par}
     \vspace{1cm}
@@ -57,8 +74,7 @@
       Submission date: & \submissiondate
     \end{tabular}
     \vspace*{2cm}
-  \end{titlepage}
-}
+  \end{titlepage}}
 \makeatother
 
 % -------------------------------------------------
@@ -66,6 +82,7 @@
 % -------------------------------------------------
 \geometry{left=3cm,right=2.5cm,top=3cm,bottom=3cm}
 \setstretch{1.2}
+\setlength{\parindent}{0cm}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
@@ -82,8 +99,6 @@
 
 \pagenumbering{roman}
 \tableofcontents
-\listoffigures
-\listoftables
 
 \cleardoublepage
 \pagenumbering{arabic}
@@ -106,8 +121,14 @@
 % -------------------------------------------------
 %              BIBLIOGRAPHY
 % -------------------------------------------------
-\bibliographystyle{unsrtnat}
+\cleardoublepage
+\listoffigures
+\listoftables
+
+\bibliographystyle{unsrt}
 \bibliography{references} % expects a file references.bib
 
+
+\end{document}
 
 \end{document}
